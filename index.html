@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FotoMartín - Tu tienda de fotografía</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    
+    <!-- NAVBAR -->
+    <nav class="barra-nav">
+      <div class="nav-contenido">
+        <div class="nav-logo">FotoMartín</div>
+        <ul class="nav-enlaces">
+          <li><a href="#destacados">Destacados</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-acciones">
+          <div class="carrito-svg">
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Hero -->
+    <div class="contenedor-contenidos">
+      <section class="hero">
+        <div class="hero-diapositiva activa">
+          <div class="hero-fondo">
+            <video autoplay muted loop playsinline>
+              <source src="./imgs/video-hero.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="hero-contenido">
+            <p>Bienvenido a <strong>FotoMartín</strong></p>
+            <h1 class="hero-titulo">Captura el mundo</h1>
+            <a href="catalogo.html" class="btn-hero"
+              >Ver productos <span>&#8250;</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Cateogrias -->
+      <div class="categorias">
+        <div class="categorias-contenedor">
+          <button class="btn-categoria">Cámaras</button>
+          <button class="btn-categoria">Lentes</button>
+          <button class="btn-categoria">Trípodes</button>
+          <button class="btn-categoria">Flashes</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Destacados-->
+    <section class="destacados" id="destacados">
+      <button class="destacados-flecha anterior" id="flechaAnterior">
+        &#8249;
+      </button>
+      <div class="destacados-diapositivas" id="destacados-diapositivas"></div>
+      <button class="destacados-flecha siguiente" id="flechaSiguiente">
+        &#8250;
+      </button>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer-pagina">
+      <div class="footer-contenedor">
+        <a href="index.html" class="footer-logo">FotoMartín</a>
+        <div class="footer-derechos">
+          <p>&copy; 2026 <strong>FotoMartín.</strong></p>
+          <p>Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

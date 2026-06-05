@@ -1,0 +1,362 @@
+/* RESET */
+:root {
+  --azul: #1a6dff;
+  --negro: #0a0a0a;
+  --blanco: #f5f5f5;
+  --texto-claro: #ffffff;
+  --texto-gris: #999999;
+  --nav-alto: 60px;
+  --fuente: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente);
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAVBAR */
+.barra-nav {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  height: var(--nav-alto);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 100;
+}
+
+.nav-contenido {
+  width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 40px;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--texto-claro);
+}
+
+.nav-enlaces {
+  list-style: none;
+  display: flex;
+  gap: 56px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-enlaces a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--blanco);
+  transition: color 0.2s;
+}
+
+.nav-enlaces a:hover {
+  color: #c7c7c7;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-acciones {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contenedor-contenidos {
+  position: relative;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero-diapositiva {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - var(--nav-alto));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.hero-diapositiva.activa {
+  opacity: 1;
+}
+
+.hero-fondo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.hero-fondo > video{
+  width: 100vw;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--texto-claro);
+  padding: 0 20px;
+}
+
+.hero-titulo {
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0 0 5% 0;
+}
+
+.hero-descripcion {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--texto-gris);
+  margin-bottom: 36px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-contenido > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  background: transparent;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  cursor: pointer;
+}
+
+.hero-contenido > a:hover {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  border-color: #fff;
+}
+
+.btn-hero > span {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* CATEGORÍAS */
+.categorias {
+  position: absolute;
+  bottom: -14vh;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 0 40px;
+}
+
+.categorias-contenedor {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.btn-categoria {
+  padding: 14px 32px;
+  border-radius: 32px;
+  border: 1px solid var(--blanco);
+  background-color: var(--blanco);
+  color: var(--negro);
+  font-family: var(--fuente);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+.btn-categoria:hover {
+  border: 1px solid var(--blanco);
+  background-color: transparent;
+  color: var(--blanco);
+}
+
+/* PRODUCTOS DESTACADOS */
+.destacados {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  padding-top: 56px;
+  background-color: var(--negro);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.destacados-diapositivas {
+  width: 100%;
+  min-height: 85vh;
+  position: relative;
+}
+
+.destacados-diapositiva {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 0 200px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.destacados-diapositiva.activa {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.imagen-slider {
+  flex: 0 0 45%;
+  height: 70vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  width: 400px;
+  height: 400px;
+  flex: 0 0 600px;
+  border-radius: 12px;
+}
+
+.destacados-contenido {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--texto-claro);
+}
+
+.destacados-etiqueta {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ff0000;
+  margin-bottom: 16px;
+}
+
+.destacados-titulo {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+
+.destacados-precio {
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--texto-claro);
+  margin-bottom: 32px;
+}
+
+.destacados-flecha {
+  position: absolute;
+  top: 50%;
+  background: var(--negro);
+  border: 1px solid var(--negro);
+  color: #fff;
+  font-size: 32px;
+  width: 55px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.destacados-flecha:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.destacados-flecha.anterior {
+  left: 0;
+  border-radius: 0 5% 5% 0;
+}
+
+.destacados-flecha.siguiente {
+  right: 0;
+  border-radius: 5% 0 0 5%;
+}
+
+/* FOOTER */
+.footer-pagina {
+  background-color: var(--negro);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 48px 40px;
+}
+
+.footer-contenedor {
+  max-width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffff;
+}
+
+.footer-derechos {
+  text-align: right;
+  font-size: 14px;
+  color: #aaaaaa;
+}
