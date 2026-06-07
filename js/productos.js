@@ -6,7 +6,7 @@ const productos = [
     descripcion:
       "Cámara mirrorless full frame de 33MP con enfoque automático avanzado, ideal para fotografía profesional y video 4K.",
     precio: 1898,
-    categoria: "camaras",
+    categoria: "Camaras",
     marca: "Sony",
     destacado: true,
     fechaIngreso: "2025-01-10",
@@ -23,7 +23,7 @@ const productos = [
     descripcion:
       "Cámara mirrorless compacta de 24.2MP perfecta para principiantes y creadores de contenido.",
     precio: 850,
-    categoria: "camaras",
+    categoria: "Camaras",
     marca: "Canon",
     destacado: true,
     fechaIngreso: "2025-02-15",
@@ -40,7 +40,7 @@ const productos = [
     descripcion:
       "Cámara full frame de entrada con 24.5MP, estabilización en 5 ejes y grabación 4K.",
     precio: 1399,
-    categoria: "camaras",
+    categoria: "Camaras",
     marca: "Nikon",
     destacado: false,
     fechaIngreso: "2025-03-01",
@@ -56,7 +56,7 @@ const productos = [
     descripcion:
       "Lente estándar compacto y liviano con apertura f/1.8, ideal para retratos y uso cotidiano.",
     precio: 249,
-    categoria: "lentes",
+    categoria: "Lentes",
     marca: "Sony",
     destacado: false,
     fechaIngreso: "2025-01-20",
@@ -71,7 +71,7 @@ const productos = [
     descripcion:
       "Lente telephoto profesional para retratos con bokeh excepcional y construcción resistente al polvo.",
     precio: 2799,
-    categoria: "lentes",
+    categoria: "Lentes",
     marca: "Canon",
     destacado: true,
     fechaIngreso: "2025-02-28",
@@ -87,7 +87,7 @@ const productos = [
     descripcion:
       "Lente zoom estándar de apertura constante f/2.8, versátil para eventos y bodas.",
     precio: 1099,
-    categoria: "lentes",
+    categoria: "Lentes",
     marca: "Sigma",
     destacado: false,
     fechaIngreso: "2025-03-10",
@@ -102,7 +102,7 @@ const productos = [
     descripcion:
       "Trípode profesional de fibra de carbono con columna central horizontal y carga máxima de 9kg.",
     precio: 599,
-    categoria: "tripodes",
+    categoria: "Tripodes",
     marca: "Manfrotto",
     destacado: false,
     fechaIngreso: "2025-01-05",
@@ -119,7 +119,7 @@ const productos = [
     descripcion:
       "Trípode flexible con patas articuladas, ideal para viajes y fotografía en exteriores.",
     precio: 89,
-    categoria: "tripodes",
+    categoria: "Tripodes",
     marca: "Joby",
     destacado: false,
     fechaIngreso: "2025-02-10",
@@ -136,7 +136,7 @@ const productos = [
     descripcion:
       "Flash externo inalámbrico TTL con batería de litio recargable y guía numérica 60.",
     precio: 189,
-    categoria: "flashes",
+    categoria: "Flashes",
     marca: "Godox",
     destacado: true,
     fechaIngreso: "2025-03-05",
@@ -153,7 +153,7 @@ const productos = [
     descripcion:
       "Flash compacto profesional con conectividad Bluetooth y tecnología AirX integrada.",
     precio: 899,
-    categoria: "flashes",
+    categoria: "Flashes",
     marca: "Profoto",
     destacado: false,
     fechaIngreso: "2025-03-20",
@@ -170,7 +170,7 @@ const productos = [
     descripcion:
       "Lente gran angular de la línea G Master con apertura f/1.4, ideal para paisajes, arquitectura y fotografía nocturna con bokeh suave.",
     precio: 1399,
-    categoria: "lentes",
+    categoria: "Lentes",
     marca: "Sony",
     destacado: false,
     fechaIngreso: "2025-02-05",
@@ -186,7 +186,7 @@ const productos = [
     descripcion:
       "Cámara mirrorless APS-C de 40MP con sensor de última generación, estabilización en 7 ejes y diseño retro compacto.",
     precio: 1699,
-    categoria: "camaras",
+    categoria: "Camaras",
     marca: "Fujifilm",
     destacado: true,
     fechaIngreso: "2025-03-12",
@@ -203,7 +203,7 @@ const productos = [
     descripcion:
       "Gimbal profesional de 3 ejes para cámaras DSLR y mirrorless de hasta 4.5kg, con pantalla táctil y estabilización automática.",
     precio: 749,
-    categoria: "gimbals",
+    categoria: "Gimbals",
     marca: "DJI",
     destacado: true,
     fechaIngreso: "2025-01-28",
@@ -219,7 +219,7 @@ const productos = [
     descripcion:
       "Flash de estudio LED de luz continua con 60W de potencia, control remoto inalámbrico y temperatura de color de 5600K.",
     precio: 149,
-    categoria: "flashes",
+    categoria: "Flashes",
     marca: "Godox",
     destacado: false,
     fechaIngreso: "2025-02-20",
@@ -234,7 +234,7 @@ const productos = [
     descripcion:
       "Cámara mirrorless full frame de 24.2MP con ráfaga de 40fps, enfoque automático de sujetos y grabación 4K 60fps sin recorte.",
     precio: 2499,
-    categoria: "camaras",
+    categoria: "Camaras",
     marca: "Canon",
     destacado: true,
     fechaIngreso: "2025-03-18",
@@ -251,7 +251,7 @@ const productos = [
     descripcion:
       "Gimbal compacto y liviano para cámaras mirrorless y smartphones, con luz LED integrada y autonomía de 8 horas.",
     precio: 299,
-    categoria: "gimbals",
+    categoria: "Gimbals",
     marca: "Zhiyun",
     destacado: false,
     fechaIngreso: "2025-02-08",
@@ -268,7 +268,7 @@ const productos = [
     descripcion:
       "Lente estándar de la línea S con apertura f/1.2, construcción premium sellada contra polvo y humedad, bokeh cinematográfico.",
     precio: 2099,
-    categoria: "lentes",
+    categoria: "Lentes",
     marca: "Nikon",
     destacado: false,
     fechaIngreso: "2025-01-15",
@@ -284,7 +284,7 @@ const productos = [
     descripcion:
       "Flash portátil de estudio con 40W de potencia, batería integrada de larga duración y compatible con todos los modificadores Profoto.",
     precio: 1899,
-    categoria: "flashes",
+    categoria: "Flashes",
     marca: "Profoto",
     destacado: true,
     fechaIngreso: "2025-03-08",
@@ -301,7 +301,7 @@ const productos = [
     descripcion:
       "Cámara mirrorless APS-C diseñada para creadores de contenido, con micrófono integrado direccional y pantalla abatible de 180°.",
     precio: 749,
-    categoria: "camaras",
+    categoria: "Camaras",
     marca: "Sony",
     destacado: false,
     fechaIngreso: "2025-04-01",
@@ -317,7 +317,7 @@ const productos = [
     descripcion:
       "Gimbal para smartphones con estabilización de 3 ejes, seguimiento de sujetos con IA y diseño plegable ultracompacto.",
     precio: 159,
-    categoria: "gimbals",
+    categoria: "Gimbals",
     marca: "DJI",
     destacado: false,
     fechaIngreso: "2025-02-25",

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Detalle del producto - Equipos Fotográficos"
+    />
+    <title>Detalle del Producto - FotoMartín</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="barra-nav-catalogo">
+      <div class="nav-contenido-catalogo">
+        <div class="nav-logo"><a href="index.html">FotoMartín</a></div>
+        <ul class="nav-enlaces">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav-acciones">
+          <div class="carrito-svg">
+            <svg
+              width="25"
+              height="25"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+            <span class="carrito-cantidad"></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-catalogo">
+      <section class="contenedor-detalle">
+        <div class="detalle-producto" id="detalleProducto">
+          <div class="detalle-imagen">
+            <div class="imagen-grande" id="imagenGrande"></div>
+            <div class="imagen-chica" id="imagenesChicas"></div>
+          </div>
+
+          <div class="detalle-contenido">
+            <h1 class="detalle-titulo" id="detalleTitulo"></h1>
+            <div class="detalle-marca" id="detalleMarca"></div>
+
+            <div class="detalle-descripcion" id="detalleDescripcion"></div>
+            <div class="detalle-precio-contenedor">
+              <p class="detalle-precio" id="detallePrecio"></p>
+            </div>
+
+            <div class="detalle-acciones">
+              <button class="btn-agregar-detalle" id="btnAgregarDetalle">
+                Agregar al Carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-pagina">
+      <div class="footer-contenedor">
+        <a href="index.html" class="footer-logo">FotoMartín</a>
+        <div class="footer-derechos">
+          <p>&copy; 2026 <strong>FotoMartín.</strong></p>
+          <p>Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/productos.js"></script>
+    <script src="js/detalle.js"></script>
+  </body>
+</html>
