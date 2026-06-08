@@ -217,7 +217,6 @@ a {
   font-weight: 700;
 }
 
-
 /* PRODUCTOS DESTACADOS */
 .destacados {
   position: relative;
@@ -738,9 +737,6 @@ a {
   line-height: 1.8;
 }
 
-
-
-
 .detalle-acciones {
   display: flex;
   gap: 16px;
@@ -785,14 +781,9 @@ a {
   color: var(--negro);
 }
 
-.btn-agregar-detalle:active {
-  transform: scale(0.98);
-}
-
-
 .imagen-grande {
   flex: 1;
-  min-height: 300px; 
+  min-height: 300px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -816,8 +807,8 @@ a {
 }
 
 .imagen-chica {
-  width: 60px;  
-  height: 60px; 
+  width: 60px;
+  height: 60px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -827,3 +818,58 @@ a {
   margin-bottom: 5px;
 }
 
+.contenedor-cuenta-regresiva {
+  width: 100%;
+  background-color: var(--negro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 24px;
+  font-style: italic;
+}
+
+.cuenta-regresiva {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+  padding: 30px 50px;
+  color: var(--texto-claro);
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border: 1px solid var(--texto-claro);
+  border-radius: 32px;
+}
+
+.cuenta-regresiva h2 {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+   color: #ff0000;
+  margin-right: 8px;
+}
+
+.cuenta-regresiva h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--texto-claro);
+  letter-spacing: 2px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.txtDias,
+.txtHoras,
+.txtMInutos,
+.txtSegundos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
