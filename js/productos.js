@@ -332,6 +332,20 @@ const productos = [
 ];
 
 // Asigna el id incremental a cada producto
-productos.forEach((producto, index) => {
-  producto.id = index + 1;
-});
+for (let i = 0; i < productos.length; i++) {
+  productos[i].id = i + 1;
+}
+
+const marcas = [
+  "Sony",
+  "Canon",
+  "Nikon",
+  "DJI",
+  "Godox",
+  "Sigma",
+  "Fujifilm",
+  "Manfrotto",
+  "Profoto",
+  "Zhiyun",
+  "Joby",
+];

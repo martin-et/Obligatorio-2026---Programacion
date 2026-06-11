@@ -1,5 +1,6 @@
-let urlDestino = window.location.href;
-let idProducto = parseInt(urlDestino.split("=")[1]);
+const parametros = new URLSearchParams(window.location.search);
+let idProducto = parametros.get("id");
+idProducto = Number(idProducto);
 
 let marcaDetalle = document.querySelector("#detalleMarca");
 let tituloDetalle = document.querySelector("#detalleTitulo");
@@ -8,33 +9,29 @@ let descripcionDetalle = document.querySelector("#detalleDescripcion");
 let imgDetalle = document.querySelector("#imagenGrande");
 let imgChicas = document.querySelector("#imagenesChicas");
 
-// Busca el producto en el array
-let productoEncontrado = null;
+let producto;
 
-for (let i = 0; i < productos.length; i++) {
-  if (productos[i].id == idProducto) {
-    productoEncontrado = productos[i];
+for (const p of productos) {
+  if (p.id == idProducto) {
+    producto = p;
   }
 }
 
-// Mostrar el producto
-if (productoEncontrado) {
-  marcaDetalle.textContent = productoEncontrado.marca;
-  tituloDetalle.textContent = productoEncontrado.nombre;
-  descripcionDetalle.textContent = productoEncontrado.descripcion;
-  precioDetalle.textContent = `US$ ${productoEncontrado.precio}`;
-  imgDetalle.style.backgroundImage = `url('${productoEncontrado.imagenes[0]}')`;
-}
+marcaDetalle.textContent = producto.marca;
+tituloDetalle.textContent = producto.nombre;
+descripcionDetalle.textContent = producto.descripcion;
+precioDetalle.textContent = `US$ ${producto.precio}`;
+imgDetalle.style.backgroundImage = `url('${producto.imagenes[0]}')`;
 
 // Generar imágenes chicas
-for (let i = 0; i < productoEncontrado.imagenes.length; i++) {
+for (const imagen of producto.imagenes) {
   let imgChica = document.createElement("div");
   imgChica.classList.add("imagen-chica");
-  imgChica.style.backgroundImage = `url('${productoEncontrado.imagenes[i]}')`;
+  imgChica.style.backgroundImage = `url('${imagen}')`;
   imgChicas.appendChild(imgChica);
 
   // Al hacer hover cambia la imagen grande
-  imgChica.addEventListener("mouseover", function () {
-    imgDetalle.style.backgroundImage = `url('${productoEncontrado.imagenes[i]}')`;
+  imgChica.addEventListener("mouseover", () => {
+    imgDetalle.style.backgroundImage = `url('${imagen}')`;
   });
 }

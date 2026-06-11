@@ -1,4 +1,4 @@
-const frasesRandom = [
+const titulos = [
   "Captura el Mundo",
   "Equipate. Capturá. Creá",
   "Tu próxima cámara te espera",
@@ -20,36 +20,34 @@ login.addEventListener("click", () => {
   login.textContent = "Inicion Sesiada".toUpperCase();
 });
 
-let h1Random = Math.floor(Math.random() * frasesRandom.length);
-h1Hero.innerHTML = frasesRandom[h1Random];
-
 let posImagen = 0;
+let h1Random = Math.floor(Math.random() * titulos.length);
+h1Hero.innerHTML = titulos[h1Random];
+
 
 //Recorre el array de productos
-for (let i = 0; i < productos.length; i++) {
-  //Valida si el producto el atributo destacado == true y si se cumple ejecuta
-  if (productos[i].destacado == true) {
-    //Creo el contenedor del Slider
-    const slide = document.createElement("div");
-    slide.className = "destacados-diapositiva";
-    //Esto crea el contenedor que contiene las imagenes dentro y
-    // le asigna la primera foto del objeto para mostrarla
+for (const prod of productos) {
+  if (prod.destacado) {
+    const contSlider = document.createElement("div");
+    contSlider.className = "destacados-diapositiva";
     const imgDiv = document.createElement("div");
-    imgDiv.className = "imagen-slider";
-    let imagenRandom = Math.floor(Math.random() * productos[i].imagenes.length);
-    imgDiv.style.backgroundImage = `url('${productos[i].imagenes[imagenRandom]}')`;
+    imgDiv.classList = "imagen-slider";
+    let imagen = prod.imagenes.length;
+
+    imgDiv.style.backgroundImage = `url('${prod.imagenes[0]}')`;
 
     const contenido = document.createElement("div");
     contenido.className = "destacados-contenido";
     contenido.innerHTML = `
-    <p class="destacados-etiqueta">PRODUCTO DESTACADO</p>
-    <h3 class="destacados-titulo">${productos[i].nombre}</h3>
-    <p class="destacados-precio"><strong>USD</strong> ${productos[i].precio}</p>
-    `;
+          <p class="destacados-etiqueta">PRODUCTO DESTACADO</p>
+          <h3 class="destacados-titulo">${prod.nombre}</h3>
+          <p class="destacados-precio"><strong>USD</strong> ${prod.precio}</p>
+          <a href='detalle.html?id=${prod.id}' class="btn-slider">Explorar</a>
+          `;
 
-    slide.appendChild(imgDiv);
-    slide.appendChild(contenido);
-    imagenSlider.appendChild(slide);
+    contSlider.appendChild(imgDiv);
+    contSlider.appendChild(contenido);
+    imagenSlider.appendChild(contSlider);
   }
 }
 
@@ -82,25 +80,31 @@ function crearReloj() {
   let tiempoRestante = ciberLunes - hoy;
 
   let dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
-  let horas = Math.floor((tiempoRestante / (1000 * 60 * 60)) % 24);
-  let minutos = Math.floor((tiempoRestante / (1000 * 60)) % 60);
-  let segundos = Math.floor((tiempoRestante / 1000) % 60);
+  let horas = Math.floor(
+    (tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  );
+  let minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+  let segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
 
-  if (dias < 10) {
-    dias = "0" + dias;
+  if (tiempoRestante < 0) {
+    document.querySelector("#cuentaRegresiva").innerHTML =
+      `<h2 class='txtExpirado'>LA OFERTA EXPIRÓ</h2>`;
+  } else {
+    if (dias < 10) {
+      dias = "0" + dias;
+    }
+    if (horas < 10) {
+      horas = "0" + horas;
+    }
+    if (minutos < 10) {
+      minutos = "0" + minutos;
+    }
+    if (segundos < 10) {
+      segundos = "0" + segundos;
+    }
+    document.querySelector("#cuentaRegresiva").innerHTML =
+      `<h2>CIBERLUNES: </h2><h3 class="txtDias">${dias} Dias</h3>|<h3 class="txtHoras">${horas} Horas</h3>|<h3 class="txtMInutos">${minutos} Minutos</h3>|<h3 class="txtSegundos">${segundos} Segundos</h3>`;
   }
-  if (horas < 10) {
-    horas = "0" + horas;
-  }
-  if (minutos < 10) {
-    minutos = "0" + minutos;
-  }
-  if (segundos < 10) {
-    segundos = "0" + segundos;
-  }
-
-  document.querySelector("#cuentaRegresiva").innerHTML =
-    `<h2>CIBERLUNES: </h2><h3 class="txtDias">${dias} Dias</h3>|<h3 class="txtHoras">${horas} Horas</h3>|<h3 class="txtMInutos">${minutos} Minutos</h3>|<h3 class="txtSegundos">${segundos} Segundos</h3>`;
 }
 crearReloj();
 setInterval(crearReloj, 1000);

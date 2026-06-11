@@ -253,18 +253,16 @@ a {
 
 .destacados-diapositiva.activa {
   opacity: 1;
+  pointer-events: all;
 }
 
 .imagen-slider {
-  flex: 0 0 45%;
-  height: 70vh;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ffffff;
-  width: 400px;
-  height: 400px;
-  flex: 0 0 600px;
+  padding: 200px;
+  flex: 1;
   border-radius: 12px;
 }
 
@@ -273,6 +271,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-height: 400px;
   color: var(--texto-claro);
 }
 
@@ -293,10 +292,11 @@ a {
 }
 
 .destacados-precio {
+  position: absolute;
+  bottom: 180px;
   font-size: 32px;
   font-weight: 300;
   color: var(--texto-claro);
-  margin-bottom: 32px;
 }
 
 .destacados-flecha {
@@ -316,6 +316,23 @@ a {
   transition: background 0.2s;
 }
 
+.btn-slider {
+  display: inline-block;
+  margin-top: auto;
+  text-align: center;
+  background-color: var(--negro);
+  padding: 10px 20px;
+  color: var(--texto-claro);
+  border: 1px solid var(--texto-claro);
+  border-radius: 24px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-slider:hover {
+  background-color: var(--texto-claro);
+  color: var(--negro);
+}
 .destacados-flecha:hover {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -409,7 +426,6 @@ a {
 }
 
 .producto-card {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -837,6 +853,7 @@ a {
   text-align: center;
   gap: 24px;
   padding: 30px 50px;
+  min-width: 800px;
   color: var(--texto-claro);
   background: linear-gradient(
     to left,
@@ -849,11 +866,11 @@ a {
 }
 
 .cuenta-regresiva h2 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   letter-spacing: 3px;
   text-transform: uppercase;
-   color: #ff0000;
+  color: #ff0000;
   margin-right: 8px;
 }
 
@@ -872,4 +889,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.txtExpirado {
+  color: var(--blanco) !important;
 }

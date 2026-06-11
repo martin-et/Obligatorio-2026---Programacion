@@ -1,7 +1,9 @@
 //Elementos
 const txtFiltro = document.querySelector("#txtFiltro");
 const selectFiltroMarcas = document.querySelector("#selectFiltroMarcas");
-const selectFiltroCategorias = document.querySelector("#selectFiltroCategorias",);
+const selectFiltroCategorias = document.querySelector(
+  "#selectFiltroCategorias",
+);
 const carritoSpan = document.querySelector(".carrito-cantidad");
 const divProductos = document.querySelector("#productosGrid");
 
@@ -10,43 +12,23 @@ txtFiltro.addEventListener("keyup", aplicarFiltros);
 selectFiltroMarcas.addEventListener("change", aplicarFiltros);
 selectFiltroCategorias.addEventListener("change", aplicarFiltros);
 
-
-
 //Inicializaciones
 armarFiltroMarcas();
 armarFiltroCategorias();
 mostrarProductos(productos);
 
-divProductos.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-agregar")) {
-    let card = e.target.closest(".producto-card");
-    let id = card.dataset.id;
-    location.href = `detalle.html?id=${id}`;
-  }
-});
-
 let contCarrito = 0;
+
+
 //Funciones
 
 function armarFiltroMarcas() {
-  let optionsSelect = `<option value="">Todas</option>`;
-  let optionVisto = "";
-
-  //Recorre la lista productos
-  //La condicion es, si en la recorrida del array entra en la marca y si es != de "" devuelve -1
-  //Entonces se asigna el valor a optionVisto, separandolo por una ",".
-  //Si se repite devuelve un valor != -1 y no entra en el if.
-  for (let i = 0; i < productos.length; i++) {
-    if (optionVisto.indexOf(productos[i].marca) == -1) {
-      optionVisto += productos[i].marca + ",";
-      optionsSelect += `
-      <option value="${productos[i].marca}">${productos[i].marca}</option>
-      `;
-    }
+ let optionsSelect = `<option value="">Todas</option>`;
+  for (const marca of marcas) {
+    optionsSelect += `<option value="${marca}">${marca}</option>`;
   }
   selectFiltroMarcas.innerHTML = optionsSelect;
-}
-
+}        
 
 function armarFiltroCategorias() {
   let optionsSelect = `<option value="">Todas</option>`;
@@ -68,7 +50,7 @@ function mostrarProductos(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     divProductos.innerHTML += `
-      <div class="producto-card" data-id="${arr[i].id}">
+    <a href = 'detalle.html?id=${arr[i].id}' class='producto-card'>
         <div class="producto-imagen" style="background-image: url('${arr[i].imagenes[0]}')"></div>
         <div class="producto-contenido">
           <h3 class="producto-nombre">${arr[i].nombre}</h3>
@@ -79,7 +61,7 @@ function mostrarProductos(arr) {
             <button class="btn-agregar">Ver Más</button>
           </div>
         </div>
-      </div>`;
+      </a>`;
   }
   if (arr.length == 0) {
     divProductos.innerHTML += `<p>No se encontraron productos</p>`;
@@ -127,12 +109,23 @@ function filtrarCategorias(arr) {
   return arrayFiltrado;
 }
 
+const h1Catalogo = document.querySelector("#h1Catalogo");
+h1Catalogo.textContent = "Nuestros Productos";
+
 //Esta funcion toma el array y devuelve los productos que coinciden con el input y se guarda en resultado.
 //mostrarProductos es la "suma" de todos los filtros que estan en la variable resultado.
-
 function aplicarFiltros() {
   let resultado = filtrarPorNombre(productos);
   resultado = filtrarMarcas(resultado);
   resultado = filtrarCategorias(resultado);
   mostrarProductos(resultado);
+
+  let marcaSeleccionada = selectFiltroMarcas.value;
+
+  if (marcaSeleccionada != "") {
+    // console.log("marca:", marcaSeleccionada);
+    h1Catalogo.textContent = marcaSeleccionada.toUpperCase();
+  } else {
+    h1Catalogo.textContent = "Nuestros Productos";
+  }
 }
