@@ -30,7 +30,7 @@ for (const imagen of producto.imagenes) {
   imgChica.style.backgroundImage = `url('${imagen}')`;
   imgChicas.appendChild(imgChica);
 
-  // Al hacer hover cambia la imagen grande
+  // Al hacer hover cambia a la imagen grande
   imgChica.addEventListener("mouseover", () => {
     imgDetalle.style.backgroundImage = `url('${imagen}')`;
   });

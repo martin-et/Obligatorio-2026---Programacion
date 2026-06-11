@@ -9,7 +9,7 @@ const productos = [
     categoria: "Camaras",
     marca: "Sony",
     destacado: true,
-    fechaIngreso: "2025-01-10",
+    descuento: false,
     imagenes: [
       "imgs/sony-a7/sony-a7-1.webp",
       "imgs/sony-a7/sony-a7-2.webp",
@@ -26,7 +26,7 @@ const productos = [
     categoria: "Camaras",
     marca: "Canon",
     destacado: true,
-    fechaIngreso: "2025-02-15",
+    descuento: true,
     imagenes: [
       "imgs/canon-r50/canon-r50-1.webp",
       "imgs/canon-r50/canon-r50-2.webp",
@@ -43,7 +43,7 @@ const productos = [
     categoria: "Camaras",
     marca: "Nikon",
     destacado: false,
-    fechaIngreso: "2025-03-01",
+    descuento: true,
     imagenes: [
       "imgs/nikon-z5-mk2/nikon-z5-1.webp",
       "imgs/nikon-z5-mk2/nikon-z5-2.webp",
@@ -59,7 +59,7 @@ const productos = [
     categoria: "Lentes",
     marca: "Sony",
     destacado: false,
-    fechaIngreso: "2025-01-20",
+    descuento: false,
     imagenes: [
       "imgs/sony-fe-50/sony-fe-1.webp",
       "imgs/sony-fe-50/sony-fe-2.webp",
@@ -74,7 +74,7 @@ const productos = [
     categoria: "Lentes",
     marca: "Canon",
     destacado: true,
-    fechaIngreso: "2025-02-28",
+    descuento: true,
     imagenes: [
       "imgs/canon-rf-85/canon-rf-1.webp",
       "imgs/canon-rf-85/canon-rf-2.webp",
@@ -90,7 +90,7 @@ const productos = [
     categoria: "Lentes",
     marca: "Sigma",
     destacado: false,
-    fechaIngreso: "2025-03-10",
+    descuento: true,
     imagenes: [
       "imgs/sony-24-70/sony-24-70-1.webp",
       "imgs/sony-24-70/sony-24-70-2.webp",
@@ -105,7 +105,7 @@ const productos = [
     categoria: "Tripodes",
     marca: "Manfrotto",
     destacado: false,
-    fechaIngreso: "2025-01-05",
+    descuento: false,
     imagenes: [
       "imgs/tripode-manfrotto/manfrotto-1.webp",
       "imgs/tripode-manfrotto/manfrotto-2.webp",
@@ -122,7 +122,7 @@ const productos = [
     categoria: "Tripodes",
     marca: "Joby",
     destacado: false,
-    fechaIngreso: "2025-02-10",
+    descuento: false,
     imagenes: [
       "imgs/joby-gorillapod/joby-gorillapod-1.webp",
       "imgs/joby-gorillapod/joby-gorillapod-2.webp",
@@ -139,7 +139,7 @@ const productos = [
     categoria: "Flashes",
     marca: "Godox",
     destacado: true,
-    fechaIngreso: "2025-03-05",
+    descuento: true,
     imagenes: [
       "imgs/flash-godox/flash-godox-1.webp",
       "imgs/flash-godox/flash-godox-2.webp",
@@ -156,7 +156,7 @@ const productos = [
     categoria: "Flashes",
     marca: "Profoto",
     destacado: false,
-    fechaIngreso: "2025-03-20",
+    descuento: true,
     imagenes: [
       "imgs/flash-profoto/flash-profoto-1.webp",
       "imgs/flash-profoto/flash-profoto-2.webp",
@@ -173,7 +173,7 @@ const productos = [
     categoria: "Lentes",
     marca: "Sony",
     destacado: false,
-    fechaIngreso: "2025-02-05",
+    descuento: true,
     imagenes: [
       "imgs/sony-24/sony-24-1.webp",
       "imgs/sony-24/sony-24-2.webp",
@@ -189,7 +189,7 @@ const productos = [
     categoria: "Camaras",
     marca: "Fujifilm",
     destacado: true,
-    fechaIngreso: "2025-03-12",
+    descuento: false,
     imagenes: [
       "imgs/fuji-xt5/fuji-xt5-1.webp",
       "imgs/fuji-xt5/fuji-xt5-2.webp",
@@ -206,7 +206,7 @@ const productos = [
     categoria: "Gimbals",
     marca: "DJI",
     destacado: true,
-    fechaIngreso: "2025-01-28",
+    descuento: true,
     imagenes: [
       "imgs/ronin-rs3-mini/ronin-rs3-mini-1.webp",
       "imgs/ronin-rs3-mini/ronin-rs3-mini-2.webp",
@@ -222,7 +222,7 @@ const productos = [
     categoria: "Flashes",
     marca: "Godox",
     destacado: false,
-    fechaIngreso: "2025-02-20",
+    descuento: true,
     imagenes: [
       "imgs/godox-sl60/godox-sl60-1.webp",
       "imgs/godox-sl60/godox-sl60-2.webp",
@@ -237,7 +237,7 @@ const productos = [
     categoria: "Camaras",
     marca: "Canon",
     destacado: true,
-    fechaIngreso: "2025-03-18",
+    descuento: true,
     imagenes: [
       "imgs/canon-r6-mk3/canon-r6-mk3-1.webp",
       "imgs/canon-r6-mk3/canon-r6-mk3-2.webp",
@@ -254,7 +254,7 @@ const productos = [
     categoria: "Gimbals",
     marca: "Zhiyun",
     destacado: false,
-    fechaIngreso: "2025-02-08",
+    descuento: false,
     imagenes: [
       "imgs/zhiyun-m3/zhiyun-m3-1.webp",
       "imgs/zhiyun-m3/zhiyun-m3-2.webp",
@@ -271,7 +271,7 @@ const productos = [
     categoria: "Lentes",
     marca: "Nikon",
     destacado: false,
-    fechaIngreso: "2025-01-15",
+    descuento: true,
     imagenes: [
       "imgs/nikkor-z50/nikkor-z50-.webp",
       "imgs/nikkor-z50/nikkor-z50-1.webp",
@@ -287,7 +287,7 @@ const productos = [
     categoria: "Flashes",
     marca: "Profoto",
     destacado: true,
-    fechaIngreso: "2025-03-08",
+    descuento: false,
     imagenes: [
       "imgs/profoto-b20/profoto-b20-1.webp",
       "imgs/profoto-b20/profoto-b20-2.webp",
@@ -304,7 +304,7 @@ const productos = [
     categoria: "Camaras",
     marca: "Sony",
     destacado: false,
-    fechaIngreso: "2025-04-01",
+    descuento: false,
     imagenes: [
       "imgs/sony-zve10/sony-zve10-1.webp",
       "imgs/sony-zve10/sony-zve10-2.webp",
@@ -320,7 +320,7 @@ const productos = [
     categoria: "Gimbals",
     marca: "DJI",
     destacado: false,
-    fechaIngreso: "2025-02-25",
+    descuento: true,
     imagenes: [
       "imgs/dji-osmo-6/dji-osmo-6-1.webp",
       "imgs/dji-osmo-6/dji-osmo-6-2.webp",

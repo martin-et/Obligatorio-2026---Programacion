@@ -19,16 +19,15 @@ mostrarProductos(productos);
 
 let contCarrito = 0;
 
-
 //Funciones
 
 function armarFiltroMarcas() {
- let optionsSelect = `<option value="">Todas</option>`;
+  let optionsSelect = `<option value="">Todas</option>`;
   for (const marca of marcas) {
     optionsSelect += `<option value="${marca}">${marca}</option>`;
   }
   selectFiltroMarcas.innerHTML = optionsSelect;
-}        
+}
 
 function armarFiltroCategorias() {
   let optionsSelect = `<option value="">Todas</option>`;
@@ -48,7 +47,16 @@ function armarFiltroCategorias() {
 function mostrarProductos(arr) {
   divProductos.innerHTML = "";
 
+  if (arr.length == 0) {
+    divProductos.innerHTML += `<p>No se encontraron productos</p>`;
+  }
+
   for (let i = 0; i < arr.length; i++) {
+    let calcDescuento = (arr[i].precio * 0.7).toFixed(0);
+    let spanDescuento = "";
+    if (arr[i].descuento) {
+      spanDescuento = `<span class="producto-descuento">30% OFF<br>$${calcDescuento}</span>`;
+    }
     divProductos.innerHTML += `
     <a href = 'detalle.html?id=${arr[i].id}' class='producto-card'>
         <div class="producto-imagen" style="background-image: url('${arr[i].imagenes[0]}')"></div>
@@ -57,14 +65,12 @@ function mostrarProductos(arr) {
           <p class="producto-marca">${arr[i].marca}</p>
           <p class="producto-descripcion">${arr[i].descripcion}</p>
           <div class="producto-footer">
-            <span class="producto-precio">US$ ${arr[i].precio}</span>
+          <span class="producto-precio">$ ${arr[i].precio}</span>
+          ${spanDescuento}
             <button class="btn-agregar">Ver Más</button>
           </div>
         </div>
       </a>`;
-  }
-  if (arr.length == 0) {
-    divProductos.innerHTML += `<p>No se encontraron productos</p>`;
   }
 }
 
