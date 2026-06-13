@@ -1,20 +1,29 @@
 //Elementos
 const txtFiltro = document.querySelector("#txtFiltro");
 const selectFiltroMarcas = document.querySelector("#selectFiltroMarcas");
-const selectFiltroCategorias = document.querySelector(
-  "#selectFiltroCategorias",
+const radioCategoria = document.querySelectorAll(
+  "input[name='radioCategoria']",
 );
+const radioOferta = document.querySelectorAll("input[name='radioOferta']");
 const carritoSpan = document.querySelector(".carrito-cantidad");
 const divProductos = document.querySelector("#productosGrid");
+const h1Catalogo = document.querySelector("#h1Catalogo");
+h1Catalogo.textContent = "Nuestros Productos";
+const btnLimpiar = document.querySelector("#btnLimpiar");
 
 // eventos
 txtFiltro.addEventListener("keyup", aplicarFiltros);
 selectFiltroMarcas.addEventListener("change", aplicarFiltros);
-selectFiltroCategorias.addEventListener("change", aplicarFiltros);
+for (const radio of radioCategoria) {
+  radio.addEventListener("change", aplicarFiltros);
+}
+for (const oferta of radioOferta) {
+  oferta.addEventListener("change", aplicarFiltros);
+}
+btnLimpiar.addEventListener("click", limpiarFiltros);
 
 //Inicializaciones
 armarFiltroMarcas();
-armarFiltroCategorias();
 mostrarProductos(productos);
 
 let contCarrito = 0;
@@ -22,26 +31,11 @@ let contCarrito = 0;
 //Funciones
 
 function armarFiltroMarcas() {
-  let optionsSelect = `<option value="">Todas</option>`;
+  let optionsSelect = `<option value="">Marcas</option>`;
   for (const marca of marcas) {
     optionsSelect += `<option value="${marca}">${marca}</option>`;
   }
   selectFiltroMarcas.innerHTML = optionsSelect;
-}
-
-function armarFiltroCategorias() {
-  let optionsSelect = `<option value="">Todas</option>`;
-  let optionVisto = "";
-
-  for (let i = 0; i < productos.length; i++) {
-    if (optionVisto.indexOf(productos[i].categoria) == -1) {
-      optionVisto += productos[i].categoria + ",";
-      optionsSelect += `
-      <option value="${productos[i].categoria}">${productos[i].categoria}</option>
-      `;
-    }
-  }
-  selectFiltroCategorias.innerHTML = optionsSelect;
 }
 
 function mostrarProductos(arr) {
@@ -52,11 +46,6 @@ function mostrarProductos(arr) {
   }
 
   for (let i = 0; i < arr.length; i++) {
-    let calcDescuento = (arr[i].precio * 0.7).toFixed(0);
-    let spanDescuento = "";
-    if (arr[i].descuento) {
-      spanDescuento = `<span class="producto-descuento">30% OFF<br>$${calcDescuento}</span>`;
-    }
     divProductos.innerHTML += `
     <a href = 'detalle.html?id=${arr[i].id}' class='producto-card'>
         <div class="producto-imagen" style="background-image: url('${arr[i].imagenes[0]}')"></div>
@@ -65,8 +54,8 @@ function mostrarProductos(arr) {
           <p class="producto-marca">${arr[i].marca}</p>
           <p class="producto-descripcion">${arr[i].descripcion}</p>
           <div class="producto-footer">
-          <span class="producto-precio">$ ${arr[i].precio}</span>
-          ${spanDescuento}
+          <span class="producto-precio">${arr[i].descuento ? `<span class='producto-descuento'>30% OFF<br>$${(arr[i].precio * 0.7).toFixed(0)}</span>` : `$${arr[i].precio}`}</span>
+          
             <button class="btn-agregar">Ver Más</button>
           </div>
         </div>
@@ -88,10 +77,10 @@ function filtrarPorNombre(arr) {
       arrayFiltrado.push(producto);
     }
   }
-  return arrayFiltrado;
+  filtrarPorMarcas(arrayFiltrado);
 }
 
-function filtrarMarcas(arr) {
+function filtrarPorMarcas(arr) {
   let marcaIngresada = selectFiltroMarcas.value;
   let arrayFiltrado = [];
 
@@ -100,38 +89,57 @@ function filtrarMarcas(arr) {
       arrayFiltrado.push(arr[i]);
     }
   }
-  return arrayFiltrado;
+  filtrarPorCategorias(arrayFiltrado);
 }
 
-function filtrarCategorias(arr) {
-  let categoriaIngresada = selectFiltroCategorias.value;
+function filtrarPorCategorias(arr) {
+  let categoriaIngresada = document.querySelector(
+    "input[name='radioCategoria']:checked",
+  ).value;
   let arrayFiltrado = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].categoria == categoriaIngresada || categoriaIngresada == "") {
-      arrayFiltrado.push(arr[i]);
+  for (const radio of arr) {
+    if (radio.categoria == categoriaIngresada || categoriaIngresada == "") {
+      arrayFiltrado.push(radio);
     }
   }
-  return arrayFiltrado;
+
+  filtroOfertas(arrayFiltrado);
 }
 
-const h1Catalogo = document.querySelector("#h1Catalogo");
-h1Catalogo.textContent = "Nuestros Productos";
+function filtroOfertas(arr) {
+  let estadoOferta = document.querySelector(
+    "input[name='radioOferta']:checked",
+  ).value;
+  let arrayFiltrado = [];
 
-//Esta funcion toma el array y devuelve los productos que coinciden con el input y se guarda en resultado.
-//mostrarProductos es la "suma" de todos los filtros que estan en la variable resultado.
+  for (const oferta of arr) {
+    if (estadoOferta == "" || oferta.descuento == (estadoOferta === "true")) {
+      arrayFiltrado.push(oferta);
+    }
+  }
+  mostrarProductos(arrayFiltrado);
+}
+
 function aplicarFiltros() {
-  let resultado = filtrarPorNombre(productos);
-  resultado = filtrarMarcas(resultado);
-  resultado = filtrarCategorias(resultado);
-  mostrarProductos(resultado);
-
   let marcaSeleccionada = selectFiltroMarcas.value;
 
   if (marcaSeleccionada != "") {
-    // console.log("marca:", marcaSeleccionada);
+    // console.log("marca:" + marcaSeleccionada);
     h1Catalogo.textContent = marcaSeleccionada.toUpperCase();
   } else {
     h1Catalogo.textContent = "Nuestros Productos";
   }
+
+  filtrarPorNombre(productos);
+}
+
+
+function limpiarFiltros() {
+  txtFiltro.value = "";
+  selectFiltroMarcas.value = "";
+  h1Catalogo.textContent = "Nuestros Productos";
+  document.querySelector("input[name='radioCategoria']").checked = true;
+  document.querySelector("input[name='radioOferta']").checked = true;
+  mostrarProductos(productos);
 }

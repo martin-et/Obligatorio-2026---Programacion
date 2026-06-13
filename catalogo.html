@@ -34,7 +34,7 @@
                 stroke-linejoin="round"
               ></path>
             </svg>
-            <span class="carrito-cantidad"></span>
+            <span class="carrito-cantidad" id="carritoCantidad"></span>
           </div>
         </div>
       </div>
@@ -45,7 +45,6 @@
         <h1 id="h1Catalogo"></h1>
         <div class="catalogo-flex">
           <div class="filtros" id="filtros">
-            <label for="">Filtro:</label>
             <input
               type="text"
               name=""
@@ -53,24 +52,63 @@
               id="txtFiltro"
               placeholder="Canon"
             />
-            <label for="">Marca:</label>
             <select
               name=""
               class="select-filtro-marcas"
               id="selectFiltroMarcas"
             ></select>
-            <label for="">Categoria:</label>
-            <select
-              name=""
-              class="select-filtro-tipo"
-              id="selectFiltroCategorias"
-            ></select>
+
+            <div class="radio-input">
+              <label for="" class="label-categoria">Categoria:</label>
+              <label class="label">
+                <input type="radio" name="radioCategoria" value="" checked />
+                <span class="text">Todos</span>
+              </label>
+              <label class="label">
+                <input type="radio" name="radioCategoria" value="Camaras" />
+                <span class="text">Cámaras</span>
+              </label>
+              <label class="label">
+                <input type="radio" name="radioCategoria" value="Lentes" />
+                <span class="text">Lentes</span>
+              </label>
+              <label class="label">
+                <input type="radio" name="radioCategoria" value="Tripodes" />
+                <span class="text">Tripodes</span>
+              </label>
+              <label class="label">
+                <input type="radio" name="radioCategoria" value="Flashes" />
+                <span class="text">Flashes</span>
+              </label>
+              <label class="label">
+                <input type="radio" name="radioCategoria" value="Gimbals" />
+                <span class="text">Gimbals</span>
+              </label>
+
+              <div class="filtro-destacados">
+                <label for="" class="label-categoria">En Oferta:</label>
+                <label class="label">
+                  <input type="radio" name="radioOferta" value="" checked />
+                  <span class="text">Todos</span>
+                </label>
+                <label class="label">
+                  <input type="radio" name="radioOferta" value="true" />
+                  <span class="text">Si</span>
+                </label>
+                <label class="label">
+                  <input type="radio" name="radioOferta" value="false" />
+                  <span class="text">No</span>
+                </label>
+              </div>
+            </div>
+            <div class="buttons-catalogo">
+              <button class="btn-limpiar" id="btnLimpiar">Limpiar Filtros</button>
+              <!-- <a href="catalogo.html">Volver al inicio</a> -->
+            </div>
           </div>
           <div class="productos-grid" id="productosGrid"></div>
         </div>
       </section>
-
-      <a href="catalogo.html">Volver al inicio</a>
     </main>
 
     <!-- Footer -->

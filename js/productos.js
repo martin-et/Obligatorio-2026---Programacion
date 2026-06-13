@@ -43,7 +43,7 @@ const productos = [
     categoria: "Camaras",
     marca: "Nikon",
     destacado: false,
-    descuento: true,
+    descuento: false,
     imagenes: [
       "imgs/nikon-z5-mk2/nikon-z5-1.webp",
       "imgs/nikon-z5-mk2/nikon-z5-2.webp",
@@ -139,7 +139,7 @@ const productos = [
     categoria: "Flashes",
     marca: "Godox",
     destacado: true,
-    descuento: true,
+    descuento: false,
     imagenes: [
       "imgs/flash-godox/flash-godox-1.webp",
       "imgs/flash-godox/flash-godox-2.webp",
@@ -206,7 +206,7 @@ const productos = [
     categoria: "Gimbals",
     marca: "DJI",
     destacado: true,
-    descuento: true,
+    descuento: false,
     imagenes: [
       "imgs/ronin-rs3-mini/ronin-rs3-mini-1.webp",
       "imgs/ronin-rs3-mini/ronin-rs3-mini-2.webp",
@@ -332,9 +332,7 @@ const productos = [
 ];
 
 // Asigna el id incremental a cada producto
-for (let i = 0; i < productos.length; i++) {
-  productos[i].id = i + 1;
-}
+productos.forEach((producto, index) => (productos[index].id = index + 1));
 
 const marcas = [
   "Sony",
