@@ -746,7 +746,7 @@ a {
 /* DETALLE DE PRODUCTO */
 .contenedor-detalle {
   background-color: var(--blanco);
-  padding: 60px 40px;
+  padding: 60px 40px 0 40px;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -902,6 +902,41 @@ a {
   margin-bottom: 5px;
 }
 
+.productos-relacionados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--negro);
+  color: var(--texto-claro);
+  padding: 5% 0 0 0;
+}
+.productos-relacionados h2 {
+  font-size: 32px;
+}
+
+.productos-grid-relacionados {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 5%;
+}
+
+.producto-card-relacionado {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
+
+.producto-card-relacionado:hover {
+  border-color: var(--texto-gris);
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.3);
+}
+
 .contenedor-cuenta-regresiva {
   width: 100%;
   background-color: var(--negro);
@@ -961,4 +996,97 @@ a {
 
 .txtExpirado {
   color: var(--blanco) !important;
+}
+
+/*CONTACTO*/
+.main-form h2 {
+  text-align: center;
+  padding: 80px 0 0 0;
+  font-size: 32px;
+}
+.contenedor-formulario {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 60px auto;
+}
+.contenedor-formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.nombre-completo {
+  display: flex;
+  gap: 16px;
+}
+
+.labelNombre,
+.labelApellido {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 8px);
+}
+
+.contenedor-formulario form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.contenedor-formulario form input[type="text"],
+.contenedor-formulario form input[type="email"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #e7e7e7;
+  color: #000000;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.contenedor-formulario form input[type="text"]:focus,
+.contenedor-formulario form input[type="email"]:focus {
+  border-color: #435dd8;
+}
+
+.contenedor-formulario form textarea {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #e7e7e7;
+  color: #000000;
+  font-size: 1rem;
+  height: 150px;
+  resize: vertical;
+  outline: none;
+  transition: border 0.2s;
+}
+.contenedor-formulario form textarea ::placeholder {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#btnform {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0ea700;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#btnform:hover {
+  background-color: #096700;
+}
+
+.errorNombre,
+.errorApellido,
+.errorCorreo{
+  color: red;
+  font-size: 12px;
 }

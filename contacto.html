@@ -7,7 +7,7 @@
     <title>Contacto - FotoMartin</title>
   </head>
   <body>
- <!-- NAVBAR -->
+    <!-- NAVBAR -->
     <nav class="barra-nav-catalogo">
       <div class="nav-contenido-catalogo">
         <div class="nav-logo"><a href="index.html">FotoMartín</a></div>
@@ -39,15 +39,35 @@
       </div>
     </nav>
 
+    <main class="main-form">
+      <h2>Contacto</h2>
+      <div class="contenedor-formulario">
+        <form action="#" method="get">
+          <div class="nombre-completo">
+            <label for="nombre"
+              class="labelNombre">Nombre
+              <input type="text" placeholder="Juan" id="txtNombre"/>
+              <p class="errorNombre"></p>
+            </label>
+            <label for="apellido"
+              class="labelApellido">Apellido
+              <input type="text" placeholder="Pérez" id="txtApellido"/>
+              <p class="errorApellido"></p>
+            </label>
+          </div>
+          <label for="correo"
+            class="labelCorreo">Correo
+            <input type="email" name="" id="txtEmail" placeholder="correo@correo.com" />
+            <p class="errorCorreo"></p>
+          </label>
+          <label for="mensaje">
+            <textarea name="mensaje" id="txtMensaje" placeholder="Escribe tu mensaje"></textarea>
+          </label>
+          <input type="submit" value="Enviar" id="btnform" />
+        </form>
+      </div>
+    </main>
 
-
-
-
-
-
-
-
-     <!-- Footer -->
     <footer class="footer-pagina">
       <div class="footer-contenedor">
         <a href="index.html" class="footer-logo">FotoMartín</a>
@@ -57,22 +77,6 @@
         </div>
       </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="js/contacto.js"></script>
   </body>

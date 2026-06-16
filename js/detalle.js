@@ -46,3 +46,32 @@ for (const imagen of producto.imagenes) {
     imgDetalle.style.backgroundImage = `url('${imagen}')`;
   });
 }
+
+const contRelacionados = document.querySelector("#productosRelacionados");
+
+function mostrarRelacionados(arr) {
+  contRelacionados.innerHTML = "";
+  
+  for (let i = 0; i < arr.length; i++) {
+    contRelacionados.innerHTML += `
+    <a href = 'detalle.html?id=${arr[i].id}' class='producto-card-relacionado'>
+        <div class="producto-imagen" style="background-image: url('${arr[i].imagenes[0]}')"></div>
+        <div class="producto-contenido">
+          <h3 class="producto-nombre">${arr[i].nombre}</h3>
+          <p class="producto-marca">${arr[i].marca}</p>
+          <p class="producto-descripcion">${arr[i].descripcion}</p>
+          <div class="producto-footer">
+          <span class="producto-precio">${arr[i].descuento ? `<span class='producto-descuento'>30% OFF<br>$${(arr[i].precio * 0.7).toFixed(0)}</span>` : `$${arr[i].precio}`}</span>
+          
+            <button class="btn-agregar">Ver Más</button>
+          </div>
+        </div>
+      </a>`;
+  }
+}
+
+let relacionados = productos
+  .filter((p) => p.categoria === producto.categoria && p.id !== producto.id)
+  .slice(0, 4);
+
+mostrarRelacionados(relacionados);
