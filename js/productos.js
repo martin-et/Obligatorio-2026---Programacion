@@ -83,7 +83,7 @@ const productos = [
     ],
   },
   {
-    nombre: "Sigma 24-70mm f/2.8 DG DN",
+    nombre: "Sigma 24-70mm f/2.8",
     descripcion:
       "Lente zoom estándar de apertura constante f/2.8, versátil para eventos y bodas.",
     precio: 1099,

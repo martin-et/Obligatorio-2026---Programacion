@@ -4,30 +4,38 @@ let totalCarrito = document.querySelector("#txtSumaCarrito");
 let msjCarrito = document.querySelector("#msjCarrito");
 let btnLimpiarCarrito = document.querySelector("#limpiarCarrito");
 
-let carrito = JSON.parse(localStorage.getItem("carrito"));
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 carritoCantidad.textContent = carrito.length;
 
 function mostrarCarrito() {
   listaCarrito.innerHTML = "";
-  let total = 0;
+  let totalSuma = 0;
+
+  if (carrito.length == 0) {
+    msjCarrito.innerHTML = `No tienes elementos en el carrito`;
+    totalCarrito.innerHTML = "";
+    return;
+  }
+  msjCarrito.innerHTML = "";
 
   for (let i = 0; i < carrito.length; i++) {
     let producto = carrito[i];
-    let precio = producto.descuento
-      ? (producto.precio * 0.7).toFixed(0)
-      : producto.precio;
+    let condicionDescuento = carrito[i].descuento
+      ? `<span style="color: red">US$ ${(carrito[i].precio * 0.7).toFixed(0)}</span> <small style="color:#a1a1a1; text-decoration:line-through">US$ ${carrito[i].precio}</small>`
+      : `<span style="color: black">US$ ${carrito[i].precio}</span>`;
 
-    total += Number(precio);
+    let precio = carrito[i].descuento ? (carrito[i].precio * 0.7.toFixed(0)) : carrito[i].precio;
+    totalSuma += Number(precio);
 
     listaCarrito.innerHTML += `
       <div class="producto-card-carrito">
       <div class="producto-imagen-carrito" style="background-image: url('${producto.imagenes[0]}')"></div>
       <h3 class="producto-nombre-carrito">${producto.nombre}</h3>
-      <p class="producto-precio-carrito">US$ ${precio}</p>
+      <p class="producto-precio-carrito">${condicionDescuento}</p>
       </div>`;
   }
 
-  totalCarrito.innerHTML = `<small>Total:</small> US$ ${total}`;
+  totalCarrito.innerHTML = `<small>Total:</small> US$ ${totalSuma}`;
 }
 
 mostrarCarrito();
