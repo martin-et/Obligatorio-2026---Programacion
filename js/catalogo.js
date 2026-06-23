@@ -1,3 +1,7 @@
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+carritoCantidad.textContent = carrito.length;
+
+
 //Elementos
 const txtFiltro = document.querySelector("#txtFiltro");
 const selectFiltroMarcas = document.querySelector("#selectFiltroMarcas");
@@ -134,12 +138,15 @@ function aplicarFiltros() {
   filtrarPorNombre(productos);
 }
 
-
 function limpiarFiltros() {
   txtFiltro.value = "";
   selectFiltroMarcas.value = "";
   h1Catalogo.textContent = "Nuestros Productos";
-  document.querySelector("input[name='radioCategoria']").checked = true;
-  document.querySelector("input[name='radioOferta']").checked = true;
+  if (!radioOferta[0].checked) {
+    radioOferta[0].click();
+  }
+  if (!radioCategoria[0].checked) {
+    radioCategoria[0].click();
+  }
   mostrarProductos(productos);
 }

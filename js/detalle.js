@@ -11,11 +11,25 @@ let imgChicas = document.querySelector("#imagenesChicas");
 let carritoCantidad = document.querySelector("#carritoCantidad");
 let btnAgregarCarrito = document.querySelector("#btnAgregarDetalle");
 
-let contador = 0;
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+carritoCantidad.textContent = carrito.length;
 
 btnAgregarCarrito.addEventListener("click", () => {
-  contador++;
-  carritoCantidad.textContent = contador;
+  carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  let productoCargado = false;
+  for (let i = 0; i < carrito.length; i++) {
+    if (carrito[i].id == producto.id) {
+      productoCargado = true;
+    }
+  }
+
+  if (!productoCargado) {
+    carrito.push(producto);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+
+  carritoCantidad.textContent = carrito.length;
 });
 
 let producto;
@@ -24,6 +38,11 @@ for (const p of productos) {
     producto = p;
   }
 }
+
+console.log("idProducto:", idProducto);
+console.log("producto encontrado:", producto);
+console.log("primer producto del array:", productos[0]);
+
 let condicionDescuento = producto.descuento
   ? `<span style="color: red">US$ ${(producto.precio * 0.7).toFixed(0)}</span> <small style="color:#a1a1a1; text-decoration:line-through">US$ ${producto.precio}</small>`
   : `<span style="color: black">US$ ${producto.precio}</span>`;
@@ -51,7 +70,7 @@ const contRelacionados = document.querySelector("#productosRelacionados");
 
 function mostrarRelacionados(arr) {
   contRelacionados.innerHTML = "";
-  
+
   for (let i = 0; i < arr.length; i++) {
     contRelacionados.innerHTML += `
     <a href = 'detalle.html?id=${arr[i].id}' class='producto-card-relacionado'>
@@ -71,7 +90,7 @@ function mostrarRelacionados(arr) {
 }
 
 let relacionados = productos
-  .filter((p) => p.categoria === producto.categoria && p.id !== producto.id)
+  .filter((p) => p.categoria == producto.categoria && p.id != producto.id)
   .slice(0, 4);
 
 mostrarRelacionados(relacionados);

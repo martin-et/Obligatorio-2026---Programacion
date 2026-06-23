@@ -40,7 +40,7 @@ for (const prod of productos) {
     contenido.innerHTML = `
           <p class="destacados-etiqueta">PRODUCTO DESTACADO</p>
           <h3 class="destacados-titulo">${prod.nombre}</h3>
-          <p class="destacados-precio">${prod.descuento ? `<p class='destacados-precio'> <small>30% OFF</small><br><strong>USD</strong> ${(prod.precio * 0.7).toFixed(0)}</p>` : `<strong>USD</strong> ${prod.precio}`}</p>
+          <p class="destacados-precio">${prod.descuento ? `<p class='destacados-precio'><strong>USD</strong> ${(prod.precio * 0.7).toFixed(0)} <small>30% OFF</small></p>` : `<strong>USD</strong> ${prod.precio}`}</p>
           <a href='detalle.html?id=${prod.id}' class="btn-slider">Explorar Producto</a>
           `;
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,22 +18,24 @@
         </ul>
         <div class="nav-acciones">
           <div class="carrito-svg">
-            <svg
-              width="25"
-              height="25"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-                stroke="#ffffff"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </svg>
-            <span class="carrito-cantidad" id="carritoCantidad"></span>
+            <a href="carrito.html">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <span class="carrito-cantidad" id="carritoCantidad"></span>
+            </a>
           </div>
         </div>
       </div>
@@ -42,27 +44,37 @@
     <main class="main-form">
       <h2>Contacto</h2>
       <div class="contenedor-formulario">
-        <form action="#" method="get">
+        <form action="#" id="formularioContacto">
           <div class="nombre-completo">
-            <label for="nombre"
-              class="labelNombre">Nombre
-              <input type="text" placeholder="Juan" id="txtNombre"/>
+            <label for="nombre" class="labelNombre"
+              >Nombre
+              <input type="text" placeholder="Juan" id="txtNombre" />
               <p class="errorNombre"></p>
             </label>
-            <label for="apellido"
-              class="labelApellido">Apellido
-              <input type="text" placeholder="Pérez" id="txtApellido"/>
+            <label for="apellido" class="labelApellido"
+              >Apellido
+              <input type="text" placeholder="Pérez" id="txtApellido" />
               <p class="errorApellido"></p>
             </label>
           </div>
-          <label for="correo"
-            class="labelCorreo">Correo
-            <input type="email" name="" id="txtEmail" placeholder="correo@correo.com" />
+          <label for="correo" class="labelCorreo"
+            >Correo
+            <input
+              type="text"
+              name=""
+              id="txtEmail"
+              placeholder="correo@correo.com"
+            />
             <p class="errorCorreo"></p>
           </label>
           <label for="mensaje">
-            <textarea name="mensaje" id="txtMensaje" placeholder="Escribe tu mensaje"></textarea>
+            <textarea
+              name="mensaje"
+              id="txtMensaje"
+              placeholder="Escribe tu mensaje"
+            ></textarea>
           </label>
+          <p class="caracteres"><span id="contadorCaracteres">0</span>/250</p>
           <input type="submit" value="Enviar" id="btnform" />
         </form>
       </div>
