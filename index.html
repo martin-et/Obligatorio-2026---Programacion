@@ -11,12 +11,22 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div class="modal" id="modal">
+      <h3>Bienvenido a FOTOMARTIN</h3>
+      <p>
+        Acabamos de incorporar las últimas cámaras Sony y Fujifilm. Explorá el
+        catálogo y encontrá tu próximo equipo.
+      </p>
+      <button id="btnModal" class="btn-Modal">Cerrar</button>
+    </div>
+
     <!-- NAVBAR -->
     <nav class="barra-nav">
       <div class="nav-contenido">
         <div class="nav-logo">FotoMartín</div>
         <ul class="nav-enlaces">
           <li><a href="#destacados">Destacados</a></li>
+          <li><a href="#valorados">Valorados</a></li>
           <li><a href="catalogo.html">Catálogo</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
@@ -48,7 +58,7 @@
 
     <!--Cuenta regresiva-->
     <div class="contenedor-cuenta-regresiva">
-      <div class="cuenta-regresiva"  id="cuentaRegresiva"></div>
+      <div class="cuenta-regresiva" id="cuentaRegresiva"></div>
     </div>
 
     <!-- Destacados-->
@@ -60,6 +70,12 @@
       <button class="destacados-flecha siguiente" id="flechaSiguiente">
         &#8250;
       </button>
+    </section>
+
+    <!-- Destacados-->
+    <section class="seccion-valorados" id="valorados">
+      <h2>Productos con mejor valoración</h2>
+      <div class="productos-grid-valorados" id="grid-valorados"></div>
     </section>
 
     <!-- Footer -->

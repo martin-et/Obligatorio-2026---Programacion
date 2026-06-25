@@ -24,7 +24,7 @@ function mostrarCarrito() {
       ? `<span style="color: red">US$ ${(carrito[i].precio * 0.7).toFixed(0)}</span> <small style="color:#a1a1a1; text-decoration:line-through">US$ ${carrito[i].precio}</small>`
       : `<span style="color: black">US$ ${carrito[i].precio}</span>`;
 
-    let precio = carrito[i].descuento ? (carrito[i].precio * 0.7.toFixed(0)) : carrito[i].precio;
+    let precio = carrito[i].descuento ? Number((carrito[i].precio * 0.7).toFixed(0)) : carrito[i].precio;
     totalSuma += Number(precio);
 
     listaCarrito.innerHTML += `

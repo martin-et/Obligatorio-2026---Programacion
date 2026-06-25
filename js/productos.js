@@ -10,6 +10,7 @@ const productos = [
     marca: "Sony",
     destacado: true,
     descuento: false,
+    valoracion: 3,
     imagenes: [
       "imgs/sony-a7/sony-a7-1.webp",
       "imgs/sony-a7/sony-a7-2.webp",
@@ -27,6 +28,7 @@ const productos = [
     marca: "Canon",
     destacado: true,
     descuento: true,
+    valoracion: 4,
     imagenes: [
       "imgs/canon-r50/canon-r50-1.webp",
       "imgs/canon-r50/canon-r50-2.webp",
@@ -44,6 +46,7 @@ const productos = [
     marca: "Nikon",
     destacado: false,
     descuento: false,
+    valoracion: 4,
     imagenes: [
       "imgs/nikon-z5-mk2/nikon-z5-1.webp",
       "imgs/nikon-z5-mk2/nikon-z5-2.webp",
@@ -60,6 +63,7 @@ const productos = [
     marca: "Sony",
     destacado: false,
     descuento: false,
+    valoracion: 5,
     imagenes: [
       "imgs/sony-fe-50/sony-fe-1.webp",
       "imgs/sony-fe-50/sony-fe-2.webp",
@@ -75,6 +79,7 @@ const productos = [
     marca: "Canon",
     destacado: true,
     descuento: true,
+    valoracion: 3,
     imagenes: [
       "imgs/canon-rf-85/canon-rf-1.webp",
       "imgs/canon-rf-85/canon-rf-2.webp",
@@ -91,6 +96,7 @@ const productos = [
     marca: "Sigma",
     destacado: false,
     descuento: true,
+    valoracion: 4,
     imagenes: [
       "imgs/sony-24-70/sony-24-70-1.webp",
       "imgs/sony-24-70/sony-24-70-2.webp",
@@ -106,6 +112,7 @@ const productos = [
     marca: "Manfrotto",
     destacado: false,
     descuento: false,
+    valoracion: 5,
     imagenes: [
       "imgs/tripode-manfrotto/manfrotto-1.webp",
       "imgs/tripode-manfrotto/manfrotto-2.webp",
@@ -123,6 +130,7 @@ const productos = [
     marca: "Joby",
     destacado: false,
     descuento: false,
+    valoracion: 2,
     imagenes: [
       "imgs/joby-gorillapod/joby-gorillapod-1.webp",
       "imgs/joby-gorillapod/joby-gorillapod-2.webp",
@@ -140,6 +148,7 @@ const productos = [
     marca: "Godox",
     destacado: true,
     descuento: false,
+    valoracion: 3,
     imagenes: [
       "imgs/flash-godox/flash-godox-1.webp",
       "imgs/flash-godox/flash-godox-2.webp",
@@ -157,6 +166,7 @@ const productos = [
     marca: "Profoto",
     destacado: false,
     descuento: true,
+    valoracion: 4,
     imagenes: [
       "imgs/flash-profoto/flash-profoto-1.webp",
       "imgs/flash-profoto/flash-profoto-2.webp",
@@ -174,6 +184,7 @@ const productos = [
     marca: "Sony",
     destacado: false,
     descuento: true,
+    valoracion: 3,
     imagenes: [
       "imgs/sony-24/sony-24-1.webp",
       "imgs/sony-24/sony-24-2.webp",
@@ -190,6 +201,7 @@ const productos = [
     marca: "Fujifilm",
     destacado: true,
     descuento: false,
+    valoracion: 5,
     imagenes: [
       "imgs/fuji-xt5/fuji-xt5-1.webp",
       "imgs/fuji-xt5/fuji-xt5-2.webp",
@@ -207,6 +219,7 @@ const productos = [
     marca: "DJI",
     destacado: true,
     descuento: false,
+    valoracion: 3,
     imagenes: [
       "imgs/ronin-rs3-mini/ronin-rs3-mini-1.webp",
       "imgs/ronin-rs3-mini/ronin-rs3-mini-2.webp",
@@ -223,6 +236,7 @@ const productos = [
     marca: "Godox",
     destacado: false,
     descuento: true,
+    valoracion: 2,
     imagenes: [
       "imgs/godox-sl60/godox-sl60-1.webp",
       "imgs/godox-sl60/godox-sl60-2.webp",
@@ -238,6 +252,7 @@ const productos = [
     marca: "Canon",
     destacado: true,
     descuento: true,
+    valoracion: 2,
     imagenes: [
       "imgs/canon-r6-mk3/canon-r6-mk3-1.webp",
       "imgs/canon-r6-mk3/canon-r6-mk3-2.webp",
@@ -255,6 +270,7 @@ const productos = [
     marca: "Zhiyun",
     destacado: false,
     descuento: false,
+    valoracion: 3,
     imagenes: [
       "imgs/zhiyun-m3/zhiyun-m3-1.webp",
       "imgs/zhiyun-m3/zhiyun-m3-2.webp",
@@ -272,6 +288,7 @@ const productos = [
     marca: "Nikon",
     destacado: false,
     descuento: true,
+    valoracion: 4,
     imagenes: [
       "imgs/nikkor-z50/nikkor-z50-.webp",
       "imgs/nikkor-z50/nikkor-z50-1.webp",
@@ -288,6 +305,7 @@ const productos = [
     marca: "Profoto",
     destacado: true,
     descuento: false,
+    valoracion: 2,
     imagenes: [
       "imgs/profoto-b20/profoto-b20-1.webp",
       "imgs/profoto-b20/profoto-b20-2.webp",
@@ -305,6 +323,7 @@ const productos = [
     marca: "Sony",
     destacado: false,
     descuento: false,
+    valoracion: 3,
     imagenes: [
       "imgs/sony-zve10/sony-zve10-1.webp",
       "imgs/sony-zve10/sony-zve10-2.webp",
@@ -321,6 +340,7 @@ const productos = [
     marca: "DJI",
     destacado: false,
     descuento: true,
+    valoracion: 2,
     imagenes: [
       "imgs/dji-osmo-6/dji-osmo-6-1.webp",
       "imgs/dji-osmo-6/dji-osmo-6-2.webp",
@@ -347,4 +367,3 @@ const marcas = [
   "Zhiyun",
   "Joby",
 ];
-
