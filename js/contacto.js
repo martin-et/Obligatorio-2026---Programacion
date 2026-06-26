@@ -6,9 +6,7 @@ const mensajeErrorCorreo = document.querySelector(".errorCorreo");
 const caracteresIngresados = document.querySelector("#contadorCaracteres");
 const btnForm = document.querySelector("#btnform");
 const formulario = document.querySelector("#formularioContacto");
-const pMensajeFormularo = document.querySelector("#mensajeEnviado");
-
-
+const pMensajeFormulario = document.querySelector("#mensajeEnviado");
 
 formulario.addEventListener("submit", enviarForm);
 txtMensaje.addEventListener("keyup", () => {
@@ -20,12 +18,12 @@ txtMensaje.addEventListener("keyup", () => {
   }
 });
 
-
 function enviarForm(e) {
   e.preventDefault();
   document.querySelector(".errorNombre").textContent = "";
   document.querySelector(".errorApellido").textContent = "";
   mensajeErrorCorreo.textContent = "";
+  pMensajeFormulario.textContent = "";
 
   let nombre = txtNombre.value;
   let apellido = txtApellido.value;
@@ -56,7 +54,7 @@ function enviarForm(e) {
   }
 
   if (!validacion) {
-    pMensajeFormularo.textContent = "FORMULARIO ENVIADO";
+    pMensajeFormulario.textContent = "FORMULARIO ENVIADO";
     txtNombre.value = "";
     txtApellido.value = "";
     txtCorreo.value = "";

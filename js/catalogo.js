@@ -68,7 +68,7 @@ function mostrarProductos(arr) {
           <h3 class="producto-nombre">${arr[i].nombre}</h3>
           <p class="producto-marca">${arr[i].marca}</p>
           <p class="producto-descripcion">${arr[i].descripcion}</p>
-          <div>${estrellas}</div>
+          <div>(${arr[i].valoracion})${estrellas}</div>
           <div class="producto-footer">
             <span class="producto-precio">${arr[i].descuento ? `<span class='producto-descuento'>30% OFF<br>$${(arr[i].precio * 0.7).toFixed(0)}</span>` : `$${arr[i].precio}`}</span>
             <button class="btn-agregar">Ver Más</button>

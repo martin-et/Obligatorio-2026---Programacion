@@ -21,10 +21,12 @@ function mostrarCarrito() {
   for (let i = 0; i < carrito.length; i++) {
     let producto = carrito[i];
     let condicionDescuento = carrito[i].descuento
-      ? `<span style="color: red">US$ ${(carrito[i].precio * 0.7).toFixed(0)}</span> <small style="color:#a1a1a1; text-decoration:line-through">US$ ${carrito[i].precio}</small>`
-      : `<span style="color: black">US$ ${carrito[i].precio}</span>`;
+      ? `<span class="precio-descuento">US$ ${(carrito[i].precio * 0.7).toFixed(0)}</span> <small class="precio-tachado">US$ ${carrito[i].precio}</small>`
+      : `<span class="precio-normal">US$ ${carrito[i].precio}</span>`;
 
-    let precio = carrito[i].descuento ? Number((carrito[i].precio * 0.7).toFixed(0)) : carrito[i].precio;
+    let precio = carrito[i].descuento
+      ? Number((carrito[i].precio * 0.7).toFixed(0))
+      : carrito[i].precio;
     totalSuma += Number(precio);
 
     listaCarrito.innerHTML += `

@@ -56,8 +56,8 @@ console.log("producto encontrado:", producto);
 console.log("primer producto del array:", productos[0]);
 
 let condicionDescuento = producto.descuento
-  ? `<span style="color: red">US$ ${(producto.precio * 0.7).toFixed(0)}</span> <small style="color:#a1a1a1; text-decoration:line-through">US$ ${producto.precio}</small>`
-  : `<span style="color: black">US$ ${producto.precio}</span>`;
+  ? `<span class="precio-descuento">US$ ${(producto.precio * 0.7).toFixed(0)}</span> <small class="precio-tachado">US$ ${producto.precio}</small>`
+  : `<span class="precio-normal">US$ ${producto.precio}</span>`;
 
 marcaDetalle.textContent = producto.marca;
 tituloDetalle.textContent = producto.nombre;

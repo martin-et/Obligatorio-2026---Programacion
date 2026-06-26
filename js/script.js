@@ -153,9 +153,9 @@ for (const prod of productos) {
       <div class="producto-contenido-valorados">
         <p class="producto-marca-valorados">${prod.marca}</p>
         <p class="producto-nombre-valorados">${prod.nombre}</p>
-        <div>${estrellas}</div>
+        <div>(${prod.valoracion}) ${estrellas}</div>
         <div class="producto-footer-valorados">
-          <span class="producto-precio-valorados">USD ${prod.precio}</span>
+          <span class="producto-precio">${prod.descuento ? `<span class='producto-descuento'>30% OFF<br>$${(prod.precio * 0.7).toFixed(0)}</span>` : `$${prod.precio}`}</span>
           <a href="detalle.html?id=${prod.id}" class="btn-agregar-valorados">Ver más</a>
         </div>
       </div>

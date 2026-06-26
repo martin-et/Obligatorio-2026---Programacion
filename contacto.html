@@ -43,22 +43,23 @@
 
     <main class="main-form">
       <h2>Contacto</h2>
+      <p id="mensajeEnviado" class="mensajeEnviado"></p>
       <div class="contenedor-formulario">
         <form action="#" id="formularioContacto">
           <div class="nombre-completo">
             <label for="nombre" class="labelNombre"
-              >Nombre
+              >Nombre*
               <input type="text" placeholder="Juan" id="txtNombre" />
               <p class="errorNombre"></p>
             </label>
             <label for="apellido" class="labelApellido"
-              >Apellido
+              >Apellido*
               <input type="text" placeholder="Pérez" id="txtApellido" />
               <p class="errorApellido"></p>
             </label>
           </div>
           <label for="correo" class="labelCorreo"
-            >Correo
+            >Correo*
             <input
               type="text"
               name=""
@@ -77,7 +78,6 @@
           <p class="caracteres"><span id="contadorCaracteres">0</span>/250</p>
           <input type="submit" value="Enviar" id="btnform" />
         </form>
-        <p id="mensajeEnviado"></p>
       </div>
     </main>
 

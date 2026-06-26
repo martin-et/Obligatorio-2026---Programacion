@@ -274,10 +274,10 @@ a {
 }
 
 /* MEJORES VALORADOS */
-.seccion-valorados > h2{
-text-align: center;
-margin-top: 80px;
-font-size: 36px;
+.seccion-valorados > h2 {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 36px;
 }
 .productos-grid-valorados {
   display: grid;
@@ -354,11 +354,6 @@ font-size: 36px;
   gap: 12px;
 }
 
-.producto-precio-valorados {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--negro);
-}
 
 .btn-agregar-valorados {
   padding: 5px 20px;
@@ -379,7 +374,6 @@ font-size: 36px;
 .btn-agregar-valorados:active {
   transform: scale(0.98);
 }
-
 
 /* PRODUCTOS DESTACADOS */
 .destacados {
@@ -1266,8 +1260,34 @@ font-size: 36px;
   color: var(--texto-gris);
 }
 
+.mensajeEnviado{
+  text-align: center;
+  margin: 50px 0 0 0;
+  font-size: 24px;
+  color: green;
+}
+
+
+
+/* CARRITO */
+
 .main-carrito {
   min-height: 80vh;
+}
+
+.precio-descuento {
+  color: red;
+  font-weight: 700;
+}
+
+.precio-tachado {
+  color: #a1a1a1;
+  text-decoration: line-through;
+}
+
+.precio-normal {
+  color: var(--negro);
+  font-weight: 700;
 }
 
 .contenedor-detalle-carrito {
@@ -1301,6 +1321,7 @@ font-size: 36px;
 
 .txtTotal {
   text-align: right;
+  margin-right: 4.8%;
   font-size: 24px;
 }
 .msjCarrito {
@@ -1330,4 +1351,3 @@ font-size: 36px;
   border-radius: 24px;
   border: none;
 }
-
